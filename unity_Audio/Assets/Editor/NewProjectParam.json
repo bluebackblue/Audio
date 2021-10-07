@@ -1,0 +1,13 @@
+{
+   "keyword":[
+      "audio",
+   ],
+   "root_readmemd_path":"../../README.md",
+   "discription":"オーディオクリップ操作",
+   "git_path":"unity_Audio/Assets/UPM",
+   "git_author":"bluebackblue",
+   "git_url":"https://github.com/",
+   "author_name":"BlueBack",
+   "need_unity_version":"2020.1",
+   "package_name":"Audio"
+}
