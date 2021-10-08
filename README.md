@@ -1,7 +1,6 @@
 # BlueBack.Audio
-xxxxx操作
-* xxxxxxxxxxxxxxxx
-* xxxxxxxxxxxxxxxx
+オーディオクリップ操作
+* BGMクロスフェード
 
 ## ライセンス
 MIT License
