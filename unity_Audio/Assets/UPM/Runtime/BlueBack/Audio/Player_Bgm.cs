@@ -13,7 +13,7 @@ namespace BlueBack.Audio
 {
 	/** Player_Bgm
 	*/
-	public class Player_Bgm : Player_Base, System.IDisposable
+	public sealed class Player_Bgm : Player_Base, System.IDisposable
 	{
 		/** mode
 		*/

@@ -22,10 +22,10 @@ namespace Editor
 		static UpmVersionManagerSetting()
 		{
 			//Object_RootUssUxml
-			BlueBack.UpmVersionManager.Editor.Object_RootUssUxml.CreateFile(false);
+			BlueBack.UpmVersionManager.Editor.Object_RootUssUxml.Save(false);
 
-			BlueBack.UpmVersionManager.Editor.Object_Setting.CreateInstance();
-			BlueBack.UpmVersionManager.Editor.Object_Setting.Param t_param = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param();
+			BlueBack.UpmVersionManager.Editor.Object_Setting.s_param = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param();
+			BlueBack.UpmVersionManager.Editor.Object_Setting.Param t_param = BlueBack.UpmVersionManager.Editor.Object_Setting.s_param;
 			{
 				//author_name
 				t_param.author_name = "BlueBack";
@@ -106,7 +106,7 @@ namespace Editor
 					"# Changelog",
 					"",
 
-					"## [0.0.1] - 2021-10-08",
+					"## [0.0.1] - 2021-10-09",
 					"### Changes",
 					"- Init",
 					"",
@@ -118,7 +118,7 @@ namespace Editor
 					//概要。
 					(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {
 						return new string[]{
-							"# " + a_argument.param.author_name + "." + a_argument.param.package_name,
+							"# " + t_param.author_name + "." + t_param.package_name,
 							"オーディオクリップ操作",
 							"* BGMクロスフェード",
 						};
@@ -129,7 +129,7 @@ namespace Editor
 						return new string[]{
 							"## ライセンス",
 							"MIT License",
-							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + a_argument.param.package_name + "/blob/main/LICENSE",
+							"* " + t_param.git_url + t_param.git_author + "/" + t_param.package_name + "/blob/main/LICENSE",
 						};
 					},
 
@@ -155,9 +155,9 @@ namespace Editor
 						return new string[]{
 							"## UPM",
 							"### 最新",
-							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + a_argument.param.package_name + ".git?path=" + a_argument.param.git_path + "#" + a_argument.version,
+							"* " + t_param.git_url + t_param.git_author + "/" + t_param.package_name + ".git?path=" + t_param.git_path + "#" + a_argument.version,
 							"### 開発",
-							"* " + a_argument.param.git_url + a_argument.param.git_author + "/" + a_argument.param.package_name + ".git?path=" + a_argument.param.git_path,
+							"* " + t_param.git_url + t_param.git_author + "/" + t_param.package_name + ".git?path=" + t_param.git_path,
 						};
 					},
 
@@ -187,11 +187,8 @@ namespace Editor
 						};
 					},
 					#endif
-
 				};
 			}
-
-			BlueBack.UpmVersionManager.Editor.Object_Setting.GetInstance().Set(t_param);
 		}
 	}
 }

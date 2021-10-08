@@ -13,7 +13,7 @@ namespace BlueBack.Audio
 {
 	/** Audio
 	*/
-	public class Audio : System.IDisposable
+	public sealed class Audio : System.IDisposable
 	{
 		/** volume
 		*/

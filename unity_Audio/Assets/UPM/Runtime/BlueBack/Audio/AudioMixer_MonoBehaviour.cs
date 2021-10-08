@@ -13,7 +13,7 @@ namespace BlueBack.Audio
 {
 	/** AudioMixer_MonoBehaviour
 	*/
-	public class AudioMixer_MonoBehaviour : UnityEngine.MonoBehaviour
+	public sealed class AudioMixer_MonoBehaviour : UnityEngine.MonoBehaviour
 	{
 		/** audiomixer
 		*/

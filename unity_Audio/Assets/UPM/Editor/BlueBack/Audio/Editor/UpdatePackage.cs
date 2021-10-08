@@ -15,7 +15,7 @@ namespace BlueBack.Audio.Editor
 	/** UpdatePackage
 	*/
 	#if(!DEF_USER_BLUEBACK_AUDIO)
-	public class UpdatePackage
+	public static class UpdatePackage
 	{
 		/** MenuItem_BlueBack_Audio_UpdatePackage
 		*/

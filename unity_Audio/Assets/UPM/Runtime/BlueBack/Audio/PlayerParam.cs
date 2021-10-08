@@ -13,7 +13,7 @@ namespace BlueBack.Audio
 {
 	/** PlayerParam
 	*/
-	public class PlayerParam
+	public sealed class PlayerParam
 	{
 		/** audio
 		*/

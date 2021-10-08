@@ -2,6 +2,10 @@
    "keyword":[
       "audio",
    ],
+   "overview":[
+      "オーディオクリップ操作",
+      "* BGMクロスフェード",
+   ],
    "root_readmemd_path":"../../README.md",
    "discription":"オーディオクリップ操作",
    "git_path":"unity_Audio/Assets/UPM",

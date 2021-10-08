@@ -29,11 +29,11 @@
       "hash": "604f444b57c692a8ed0371a410dfe91a4db0fa78"
     },
     "blueback.upmversionmanager": {
-      "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=unity_UpmVersionManager/Assets/UPM#0.0.29",
+      "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=unity_UpmVersionManager/Assets/UPM#0.0.31",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "91c3c26fefaae5fb4e62896329fffe56aa40b0de"
+      "hash": "339eb144d8d82c0b102a6a0a81497adffef0a0ad"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",

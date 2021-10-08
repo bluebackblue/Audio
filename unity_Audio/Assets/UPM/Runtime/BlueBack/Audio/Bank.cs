@@ -16,7 +16,7 @@ namespace BlueBack.Audio
 	#if(UNITY_EDITOR)
 	[System.Serializable]
 	#endif
-	public class Bank
+	public sealed class Bank
 	{
 		/** Item
 		*/

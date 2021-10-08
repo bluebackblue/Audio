@@ -6,7 +6,7 @@ namespace Samples.Audio.Bgm
 {
 	/** TestScene_Monobehaviour
 	*/
-	public class TestScene_Monobehaviour : UnityEngine.MonoBehaviour
+	public sealed class TestScene_Monobehaviour : UnityEngine.MonoBehaviour
 	{
 		/** instance
 		*/

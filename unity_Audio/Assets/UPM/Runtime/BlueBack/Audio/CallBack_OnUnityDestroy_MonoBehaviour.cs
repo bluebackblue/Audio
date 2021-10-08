@@ -13,7 +13,7 @@ namespace BlueBack.Audio
 {
 	/** CallBack_OnUnityDestroy_MonoBehaviour
 	*/
-	public class CallBack_OnUnityDestroy_MonoBehaviour : UnityEngine.MonoBehaviour
+	public sealed class CallBack_OnUnityDestroy_MonoBehaviour : UnityEngine.MonoBehaviour
 	{
 		/** instance
 		*/

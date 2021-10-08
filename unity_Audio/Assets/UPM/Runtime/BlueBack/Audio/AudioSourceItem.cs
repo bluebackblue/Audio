@@ -13,7 +13,7 @@ namespace BlueBack.Audio
 {
 	/** AudioSourceItem
 	*/
-	public class AudioSourceItem
+	public sealed class AudioSourceItem
 	{
 		/** raw
 		*/

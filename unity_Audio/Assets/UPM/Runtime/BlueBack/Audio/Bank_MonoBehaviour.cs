@@ -13,7 +13,7 @@ namespace BlueBack.Audio
 {
 	/** Bank_MonoBehaviour
 	*/
-	public class Bank_MonoBehaviour : UnityEngine.MonoBehaviour
+	public sealed class Bank_MonoBehaviour : UnityEngine.MonoBehaviour
 	{
 		/** bank
 		*/
