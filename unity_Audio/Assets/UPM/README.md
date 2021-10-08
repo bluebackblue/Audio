@@ -18,7 +18,7 @@ Unity 2020.3.12f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/Audio.git?path=unity_Audio/Assets/UPM#0.0.0
+* https://github.com/bluebackblue/Audio.git?path=unity_Audio/Assets/UPM#0.0.1
 ### 開発
 * https://github.com/bluebackblue/Audio.git?path=unity_Audio/Assets/UPM
 

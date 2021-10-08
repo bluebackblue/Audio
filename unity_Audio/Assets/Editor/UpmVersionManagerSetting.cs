@@ -42,21 +42,6 @@ namespace Editor
 				//package_name
 				t_param.package_name = "Audio";
 
-				//getpackageversion
-				t_param.getpackageversion = ()=>{
-					System.Type t_type = System.Type.GetType("BlueBack.Audio.Version,BlueBack.Audio");
-					if(t_type != null){
-						System.Reflection.MethodInfo t_methodinfo = t_type.GetMethod("GetPackageVersion",System.Reflection.BindingFlags.Static|System.Reflection.BindingFlags.Public);
-						if(t_methodinfo != null){
-							System.Object t_object = t_methodinfo.Invoke(null,null);
-							if(t_object is string){
-								return (string) t_object;
-							}
-						}
-					}
-					return "0.0.-1";
-				};
-
 				//packagejson_unity
 				t_param.packagejson_unity = "2020.1";
 
@@ -80,8 +65,8 @@ namespace Editor
 				t_param.asmdef_runtime = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefItem{
 					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
 						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
-						package_name = "BlueBack.UnityPlayerLoop",
-						url = t_param.git_url + t_param.git_author + "/UnityPlayerLoop",
+							package_name = "BlueBack.UnityPlayerLoop",
+							url = "https://github.com/bluebackblue/UnityPlayerLoop",
 						},
 					},
 					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
@@ -92,8 +77,8 @@ namespace Editor
 				t_param.asmdef_editor = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefItem{
 					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
 						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
-						package_name = "BlueBack.Audio",
-						url = t_param.git_url + t_param.git_author + "/Audio",
+							package_name = "BlueBack.Audio",
+							url = "https://github.com/bluebackblue/Audio",
 						},
 					},
 					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
@@ -104,8 +89,8 @@ namespace Editor
 				t_param.asmdef_sample = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefItem{
 					reference_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem[]{
 						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
-						package_name = "BlueBack.Audio",
-						url = t_param.git_url + t_param.git_author + "/Audio",
+							package_name = "BlueBack.Audio",
+							url = "https://github.com/bluebackblue/Audio",
 						},
 					},
 					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
