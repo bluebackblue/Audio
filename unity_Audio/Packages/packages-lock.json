@@ -22,11 +22,11 @@
       "hash": "158454a25358cfc9bd077301583aa7b939bf5a93"
     },
     "blueback.unityplayerloop": {
-      "version": "https://github.com/bluebackblue/UnityPlayerLoop.git?path=unity_UnityPlayerLoop/Assets/UPM",
+      "version": "https://github.com/bluebackblue/UnityPlayerLoop.git?path=unity_UnityPlayerLoop/Assets/UPM#0.0.10",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "604f444b57c692a8ed0371a410dfe91a4db0fa78"
+      "hash": "d3ec4736d30197ba7b0e0da8d84dfa57b17659a2"
     },
     "blueback.upmversionmanager": {
       "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=unity_UpmVersionManager/Assets/UPM#0.0.31",
