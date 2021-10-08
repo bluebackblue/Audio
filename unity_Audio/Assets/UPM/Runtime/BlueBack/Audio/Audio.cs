@@ -23,11 +23,7 @@ namespace BlueBack.Audio
 		*/
 		public System.Collections.Generic.Dictionary<string,Player_Base> player;
 
-		/** callback_onunitydestroy
-		*/
-		private CallBack_OnUnityDestroy_MonoBehaviour callback_onunitydestroy;
-
-		/** [シングルトン]constructor
+		/** constructor
 		*/
 		public Audio()
 		{
@@ -39,15 +35,9 @@ namespace BlueBack.Audio
 
 			//player
 			this.player = new System.Collections.Generic.Dictionary<string,Player_Base>();
-
-			//callback_gameobject
-			UnityEngine.GameObject t_callback_gameobject = new UnityEngine.GameObject("audio_callback");
-			UnityEngine.GameObject.DontDestroyOnLoad(t_callback_gameobject);
-			this.callback_onunitydestroy = t_callback_gameobject.AddComponent<CallBack_OnUnityDestroy_MonoBehaviour>();
-			this.callback_onunitydestroy.instance = this;
 		}
 
-		/** [シングルトン]削除。
+		/** [System.IDisposable]削除。
 		*/
 		public void Dispose()
 		{
@@ -55,12 +45,6 @@ namespace BlueBack.Audio
 			UnityEngine.LowLevel.PlayerLoopSystem t_playerloopsystem = BlueBack.UnityPlayerLoop.UnityPlayerLoop.GetCurrentPlayerLoop();
 			BlueBack.UnityPlayerLoop.Remove.RemoveFromType(ref t_playerloopsystem,typeof(PlayerLoopType.FixedUpdate));
 			BlueBack.UnityPlayerLoop.UnityPlayerLoop.SetPlayerLoop(t_playerloopsystem);
-
-			if(this.callback_onunitydestroy != null){
-				this.callback_onunitydestroy.instance = null;
-				UnityEngine.GameObject.Destroy(this.callback_onunitydestroy.gameObject);
-				this.callback_onunitydestroy = null;
-			}
 		}
 
 		/** GetMasterVolume
