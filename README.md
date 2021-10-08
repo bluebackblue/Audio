@@ -12,13 +12,14 @@ MIT License
 * https://github.com/bluebackblue/Audio
 ### サンプル
 * https://github.com/bluebackblue/Audio
+* https://maou.audio/
 
 ## 動作確認
 Unity 2020.3.12f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/Audio.git?path=unity_Audio/Assets/UPM#0.0.1
+* https://github.com/bluebackblue/Audio.git?path=unity_Audio/Assets/UPM#0.0.2
 ### 開発
 * https://github.com/bluebackblue/Audio.git?path=unity_Audio/Assets/UPM
 

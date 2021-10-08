@@ -92,6 +92,10 @@ namespace Editor
 							package_name = "BlueBack.Audio",
 							url = "https://github.com/bluebackblue/Audio",
 						},
+						new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefReferenceItem(){
+							package_name = "BlueBack.Audio.Editor",
+							url = "https://github.com/bluebackblue/Audio",
+						},
 					},
 					versiondefine_list = new BlueBack.UpmVersionManager.Editor.Object_Setting.Param.AsmdefVersionDefineItem[]{
 					},
@@ -134,6 +138,7 @@ namespace Editor
 						System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();
 						t_list.Add("## 依存 / 使用ライセンス等");
 						t_list.AddRange(BlueBack.UpmVersionManager.Editor.Object_Setting.Create_RootReadMd_Asmdef_Dependence(a_argument));
+						t_list.Add("* https://maou.audio/");
 						return t_list.ToArray();
 					},
 
