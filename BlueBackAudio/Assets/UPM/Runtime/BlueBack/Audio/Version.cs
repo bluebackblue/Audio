@@ -21,7 +21,7 @@ namespace BlueBack.Audio
 
 		/** packageversion
 		*/
-		public const string packageversion = "0.0.6";
+		public const string packageversion = "0.0.7";
 
 		/** GetPackageVersion
 		*/

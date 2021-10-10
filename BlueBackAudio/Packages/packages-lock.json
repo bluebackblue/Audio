@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "1b291b3f2bad7e431708a548fc0fe1a0188f25e0"
+      "hash": "551905d0f5bcb1fb5165ee55125b42172eb6e593"
     },
     "blueback.code": {
       "version": "https://github.com/bluebackblue/Code.git?path=BlueBackCode/Assets/UPM",
@@ -33,7 +33,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "aeb5a0a18f408eb71e1f24cee9f923c4df6b8da6"
+      "hash": "b8c78822c710e29b75ca50992f6731aafe541fc9"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
