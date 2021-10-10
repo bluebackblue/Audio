@@ -19,9 +19,9 @@ Unity 2020.3.12f1
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/Audio.git?path=unity_Audio/Assets/UPM#0.0.5
+* https://github.com/bluebackblue/Audio.git?path=BlueBackAudio/Assets/UPM#0.0.6
 ### 開発
-* https://github.com/bluebackblue/Audio.git?path=unity_Audio/Assets/UPM
+* https://github.com/bluebackblue/Audio.git?path=BlueBackAudio/Assets/UPM
 
 ## Unityへの追加方法
 * Unity起動

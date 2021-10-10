@@ -1,35 +1,35 @@
 {
   "dependencies": {
     "blueback.assetlib": {
-      "version": "https://github.com/bluebackblue/AssetLib.git?path=unity_AssetLib/Assets/UPM#0.0.32",
+      "version": "https://github.com/bluebackblue/AssetLib.git?path=BlueBackAssetLib/Assets/UPM",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "dc21a847dedd965e95cd0d748db103253ee4423b"
+      "hash": "1b291b3f2bad7e431708a548fc0fe1a0188f25e0"
     },
     "blueback.code": {
-      "version": "https://github.com/bluebackblue/Code.git?path=unity_Code/Assets/UPM#0.0.7",
+      "version": "https://github.com/bluebackblue/Code.git?path=BlueBackCode/Assets/UPM",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "6647d0a788c31b160cb75ca694905ab39b7d65d8"
+      "hash": "86e0c8a513828420f73d7f400be8c3a3f58814d7"
     },
     "blueback.jsonitem": {
-      "version": "https://github.com/bluebackblue/JsonItem.git?path=unity_JsonItem/Assets/UPM#0.0.19",
+      "version": "https://github.com/bluebackblue/JsonItem.git?path=BlueBackJsonItem/Assets/UPM",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "158454a25358cfc9bd077301583aa7b939bf5a93"
+      "hash": "98ecbf1b0f9e7a62ef1129915e5d5d601a753690"
     },
     "blueback.unityplayerloop": {
-      "version": "https://github.com/bluebackblue/UnityPlayerLoop.git?path=unity_UnityPlayerLoop/Assets/UPM#0.0.10",
+      "version": "https://github.com/bluebackblue/UnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d3ec4736d30197ba7b0e0da8d84dfa57b17659a2"
+      "hash": "ea24436e9fe2e18d7f3daf08d8280fb85ecdac9c"
     },
     "blueback.upmversionmanager": {
-      "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=BlueBackUpmVersionManager/Assets/UPM#0.0.33",
+      "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=BlueBackUpmVersionManager/Assets/UPM",
       "depth": 0,
       "source": "git",
       "dependencies": {},
