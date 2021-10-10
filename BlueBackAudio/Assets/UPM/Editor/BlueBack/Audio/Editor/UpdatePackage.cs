@@ -28,9 +28,9 @@ namespace BlueBack.Audio.Editor
 				DebugTool.EditorLogError("GetLastReleaseNameFromGitHub : connect error");
 				#endif
 			}else if(t_version.Length <= 0){
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/Audio.git?path=unity_Audio/Assets/UPM");
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/Audio.git?path=BlueBackAudio/Assets/UPM");
 			}else{
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/Audio.git?path=unity_Audio/Assets/UPM#" + t_version);
+				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/Audio.git?path=BlueBackAudio/Assets/UPM#" + t_version);
 			}
 		}
 
