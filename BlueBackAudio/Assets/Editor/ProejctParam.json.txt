@@ -1,0 +1,51 @@
+{
+    "namespace_author":"BlueBack",
+    "namespace_package":"Audio",
+    "git_url":"https://github.com/bluebackblue/UpmAudio",
+    "git_api":"https://api.github.com/repos/bluebackblue/UpmAudio",
+    "git_path":"BlueBackAudio/Assets/UPM",
+    "discription_simple":"オーディオクリップ操作",
+    "discription_detal":[
+        "オーディオクリップ操作",
+        "* BGMクロスフェード",
+    ],
+    "keyword":[
+        "audio",
+    ],
+    "changelog":[
+        "# Changelog",
+        "",
+        "## [0.0.0] - 2021-10-08",
+        "### Changes",
+        "- Init",
+        "",
+    ],
+    "root_readmemd_path":"../../README.md",
+    "need_unity_version":"2020.1",
+    "asmdef_runtime":{
+        "define_list":[
+        ],
+        "reference_list":[
+        ]
+    },
+    "asmdef_editor":{
+        "define_list":[
+        ],
+        "reference_list":[
+        ]
+    },
+    "asmdef_sample":{
+        "define_list":[
+        ],
+        "reference_list":[
+            {
+                "package_fullname":"BlueBack.Audio",
+                "url":"https://github.com/bluebackblue/UpmAudio",
+            },
+            {
+                "package_fullname":"BlueBack.Audio.Editor",
+                "url":"https://github.com/bluebackblue/UpmAudio",
+            },
+        ]
+    },
+}
