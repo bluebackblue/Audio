@@ -7,10 +7,10 @@
     "discription_simple":"オーディオクリップ操作",
     "discription_detal":[
         "オーディオクリップ操作",
-        "* BGMクロスフェード",
+        "* BGMクロスフェード"
     ],
     "keyword":[
-        "audio",
+        "audio"
     ],
     "changelog":[
         "# Changelog",
@@ -18,7 +18,7 @@
         "## [0.0.0] - 2021-10-08",
         "### Changes",
         "- Init",
-        "",
+        ""
     ],
     "root_readmemd_path":"../../README.md",
     "need_unity_version":"2020.1",
@@ -26,12 +26,22 @@
         "define_list":[
         ],
         "reference_list":[
+            {
+                "use":"use",
+                "package_fullname":"BlueBack.UnityPlayerLoop",
+                "url":"https://github.com/bluebackblue/UpmUnityPlayerLoop"
+            }
         ]
     },
     "asmdef_editor":{
         "define_list":[
         ],
         "reference_list":[
+            {
+                "use":"use",
+                "package_fullname":"BlueBack.Audio",
+                "url":"https://github.com/bluebackblue/UpmAudio"
+            }
         ]
     },
     "asmdef_sample":{
@@ -39,13 +49,10 @@
         ],
         "reference_list":[
             {
+                "use":"use",
                 "package_fullname":"BlueBack.Audio",
-                "url":"https://github.com/bluebackblue/UpmAudio",
-            },
-            {
-                "package_fullname":"BlueBack.Audio.Editor",
-                "url":"https://github.com/bluebackblue/UpmAudio",
-            },
+                "url":"https://github.com/bluebackblue/UpmAudio"
+            }
         ]
-    },
+    }
 }

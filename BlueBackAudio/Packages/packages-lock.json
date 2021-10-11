@@ -1,39 +1,39 @@
 {
   "dependencies": {
     "blueback.assetlib": {
-      "version": "https://github.com/bluebackblue/AssetLib.git?path=BlueBackAssetLib/Assets/UPM",
+      "version": "https://github.com/bluebackblue/UpmAssetLib.git?path=BlueBackAssetLib/Assets/UPM",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "551905d0f5bcb1fb5165ee55125b42172eb6e593"
+      "hash": "925921222c33bb37e91f1018ecf04a5234965548"
     },
     "blueback.code": {
-      "version": "https://github.com/bluebackblue/Code.git?path=BlueBackCode/Assets/UPM",
+      "version": "https://github.com/bluebackblue/UpmCode.git?path=BlueBackCode/Assets/UPM",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "86e0c8a513828420f73d7f400be8c3a3f58814d7"
+      "hash": "a34b8d9d7585e875f511505659988e72a88f7294"
     },
     "blueback.jsonitem": {
-      "version": "https://github.com/bluebackblue/JsonItem.git?path=BlueBackJsonItem/Assets/UPM",
+      "version": "https://github.com/bluebackblue/UpmJsonItem.git?path=BlueBackJsonItem/Assets/UPM",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "98ecbf1b0f9e7a62ef1129915e5d5d601a753690"
+      "hash": "4b91773e9aedf6663db28d0f946c6b7cb2b9ca42"
     },
     "blueback.unityplayerloop": {
-      "version": "https://github.com/bluebackblue/UnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM",
+      "version": "https://github.com/bluebackblue/UpmUnityPlayerLoop.git?path=BlueBackUnityPlayerLoop/Assets/UPM",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "ea24436e9fe2e18d7f3daf08d8280fb85ecdac9c"
+      "hash": "93a12ed926c1ae7c28e10fbaeeca7e88eb65687f"
     },
     "blueback.upmversionmanager": {
-      "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=BlueBackUpmVersionManager/Assets/UPM",
+      "version": "https://github.com/bluebackblue/UpmVersionManager.git?path=BlueBackUpmVersionManager/Assets/UPM#0.0.45",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2ab2e69d8fa5daaba185f121ff3be91dfb906476"
+      "hash": "ae24f5cf2bbf16cb45eb1e5ea42e91fad6fabf00"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
