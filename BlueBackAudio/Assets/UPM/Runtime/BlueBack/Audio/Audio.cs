@@ -29,7 +29,7 @@ namespace BlueBack.Audio
 		{
 			//PlayerLoopSystem
 			UnityEngine.LowLevel.PlayerLoopSystem t_playerloopsystem = BlueBack.UnityPlayerLoop.UnityPlayerLoop.GetCurrentPlayerLoop();
-			BlueBack.UnityPlayerLoop.Add.AddFromType(ref t_playerloopsystem,UnityPlayerLoop.Mode.AddFirst,typeof(UnityEngine.PlayerLoop.FixedUpdate),typeof(PlayerLoopType.FixedUpdate),this.OnUnityFixedUpdate);
+			BlueBack.UnityPlayerLoop.Add.AddFromType(ref t_playerloopsystem,UnityPlayerLoop.Mode.AddFirst,typeof(UnityEngine.PlayerLoop.FixedUpdate),typeof(PlayerLoopType.Main),this.MainUpdate);
 			BlueBack.UnityPlayerLoop.UnityPlayerLoop.SetPlayerLoop(t_playerloopsystem);
 			BlueBack.UnityPlayerLoop.UnityPlayerLoop.SetDefaultPlayerLoopOnUnityDestroy();
 
@@ -43,7 +43,7 @@ namespace BlueBack.Audio
 		{
 			//PlayerLoopSystem
 			UnityEngine.LowLevel.PlayerLoopSystem t_playerloopsystem = BlueBack.UnityPlayerLoop.UnityPlayerLoop.GetCurrentPlayerLoop();
-			BlueBack.UnityPlayerLoop.Remove.RemoveFromType(ref t_playerloopsystem,typeof(PlayerLoopType.FixedUpdate));
+			BlueBack.UnityPlayerLoop.Remove.RemoveFromType(ref t_playerloopsystem,typeof(PlayerLoopType.Main));
 			BlueBack.UnityPlayerLoop.UnityPlayerLoop.SetPlayerLoop(t_playerloopsystem);
 		}
 
@@ -98,9 +98,9 @@ namespace BlueBack.Audio
 			return t_player;
 		}
 
-		/** OnUnityFixedUpdate
+		/** MainUpdate
 		*/
-		private void OnUnityFixedUpdate()
+		private void MainUpdate()
 		{
 			foreach(System.Collections.Generic.KeyValuePair<string,Player_Base> t_pair in this.player){
 				t_pair.Value.OnUnityFixedUpdate();

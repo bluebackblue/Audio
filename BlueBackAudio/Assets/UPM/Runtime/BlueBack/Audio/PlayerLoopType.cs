@@ -15,9 +15,9 @@ namespace BlueBack.Audio
 	*/
 	public sealed class PlayerLoopType
 	{
-		/** FixedUpdate
+		/** Main
 		*/
-		public struct FixedUpdate{}
+		public struct Main{}
 	}
 }
 
