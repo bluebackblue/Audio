@@ -14,11 +14,11 @@ MIT License
 * https://github.com/bluebackblue/UpmAudio
 
 ## 動作確認
-Unity 2020.3.12f1
+Unity 2021.2.0b9
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM#0.0.9
+* https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM#0.0.10
 ### 開発
 * https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM
 
@@ -32,4 +32,5 @@ Unity 2020.3.12f1
 Gitクライアントがインストールされている必要がある。
 * https://docs.unity3d.com/ja/current/Manual/upm-git.html
 * https://git-scm.com/
+
 

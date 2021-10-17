@@ -6,7 +6,7 @@
 	xsi:schemaLocation="UnityEngine.UIElements ../UIElementsSchema/UnityEngine.UIElements.xsd">
 
 
-  <Style src="UpmVersionManagerWindow.uss" />
+  <Style src="VersionManagerWindow.uss" />
 
   <!-- label_1 -->
   <Box>

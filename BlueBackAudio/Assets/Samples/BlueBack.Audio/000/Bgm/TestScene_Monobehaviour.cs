@@ -1,6 +1,6 @@
 
 
-/** Samples.AssetLib.Asset
+/** Samples.Audio.Bgm
 */
 namespace Samples.Audio.Bgm
 {

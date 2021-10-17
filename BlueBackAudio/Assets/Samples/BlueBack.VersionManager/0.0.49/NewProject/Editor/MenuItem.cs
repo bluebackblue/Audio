@@ -1,8 +1,8 @@
 
 
-/** Samples.UpmVersionManager.NewProject.Editor
+/** Samples.VersionManager.NewProject
 */
-namespace Samples.UpmVersionManager.NewProject.Editor
+namespace Samples.VersionManager.NewProject
 {
 	/** MenuItem
 	*/
@@ -11,8 +11,8 @@ namespace Samples.UpmVersionManager.NewProject.Editor
 	{
 		/** MenuItem_NewProject
 		*/
-		[UnityEditor.MenuItem("UpmVersionManager/NewProject/CreateUpmVersionManagerSetting")]
-		private static void MenuItem_NewProject_CreateUpmVersionManagerSetting()
+		[UnityEditor.MenuItem("サンプル/BlueBack.VersionManager/NewProject/CreateVersionManagerSetting")]
+		private static void MenuItem_CreateVersionManagerSetting()
 		{
 			string[] t_text_list = new string[]{
 				"",
@@ -29,51 +29,51 @@ namespace Samples.UpmVersionManager.NewProject.Editor
 				"#if(UNITY_EDITOR)",
 				"namespace Editor",
 				"{",
-				"	/** UpmVersionManagerSetting",
+				"	/** VersionManagerSetting",
 				"	*/",
 				"	[UnityEditor.InitializeOnLoad]",
-				"	public static class UpmVersionManagerSetting",
+				"	public static class VersionManagerSetting",
 				"	{",
-				"		/** UpmVersionManagerSetting",
+				"		/** VersionManagerSetting",
 				"		*/",
-				"		static UpmVersionManagerSetting()",
+				"		static VersionManagerSetting()",
 				"		{",
 				"			//Object_RootUssUxml",
-				"			BlueBack.UpmVersionManager.Editor.Object_RootUssUxml.Save(false);",
+				"			BlueBack.VersionManager.Editor.Object_RootUssUxml.Save(false);",
 				"",
 				"			//projectparam",
-				"			BlueBack.UpmVersionManager.Editor.Object_Setting.s_projectparam = BlueBack.UpmVersionManager.Editor.ProjectParam.Load();",
+				"			BlueBack.VersionManager.Editor.Object_Setting.s_projectparam = BlueBack.VersionManager.Editor.ProjectParam.Load();",
 				"",
 				"			//s_object_root_readme_md",
-				"			BlueBack.UpmVersionManager.Editor.Object_Setting.s_object_root_readme_md = new BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Type[]{",
+				"			BlueBack.VersionManager.Editor.Object_Setting.s_object_root_readme_md = new BlueBack.VersionManager.Editor.Object_Setting.Creator_Type[]{",
 				"",
 				"				//概要。",
-				"				(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
+				"				(in BlueBack.VersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
 				"					System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();",
-				"					t_list.Add(\"# \" + BlueBack.UpmVersionManager.Editor.Object_Setting.s_projectparam.namespace_author + \".\" + BlueBack.UpmVersionManager.Editor.Object_Setting.s_projectparam.namespace_package);",
-				"					t_list.AddRange(BlueBack.UpmVersionManager.Editor.Object_Setting.Create_RootReadMd_Overview(a_argument));",
+				"					t_list.Add(\"# \" + BlueBack.VersionManager.Editor.Object_Setting.s_projectparam.namespace_author + \".\" + BlueBack.VersionManager.Editor.Object_Setting.s_projectparam.namespace_package);",
+				"					t_list.AddRange(BlueBack.VersionManager.Editor.Object_Setting.Create_RootReadMd_Overview(a_argument));",
 				"					return t_list.ToArray();",
 				"				},",
 				"",
 				"				//ライセンス。",
-				"				(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
+				"				(in BlueBack.VersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
 				"					return new string[]{",
 				"						\"## ライセンス\",",
 				"						\"MIT License\",",
-				"						\"* \" + BlueBack.UpmVersionManager.Editor.Object_Setting.s_projectparam.git_url + \"/blob/main/LICENSE\",",
+				"						\"* \" + BlueBack.VersionManager.Editor.Object_Setting.s_projectparam.git_url + \"/blob/main/LICENSE\",",
 				"					};",
 				"				},",
 				"",
 				"				//依存。",
-				"				(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
+				"				(in BlueBack.VersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
 				"					System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();",
 				"					t_list.Add(\"## 依存 / 使用ライセンス等\");",
-				"					t_list.AddRange(BlueBack.UpmVersionManager.Editor.Object_Setting.Create_RootReadMd_Asmdef_Dependence(a_argument));",
+				"					t_list.AddRange(BlueBack.VersionManager.Editor.Object_Setting.Create_RootReadMd_Asmdef_Dependence(a_argument));",
 				"					return t_list.ToArray();",
 				"				},",
 				"",
 				"				//動作確認。",
-				"				(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
+				"				(in BlueBack.VersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
 				"					return new string[]{",
 				"						\"## 動作確認\",",
 				"						\"Unity \" + UnityEngine.Application.unityVersion,",
@@ -81,18 +81,18 @@ namespace Samples.UpmVersionManager.NewProject.Editor
 				"				},",
 				"",
 				"				//UPM。",
-				"				(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
+				"				(in BlueBack.VersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
 				"					return new string[]{",
 				"						\"## UPM\",",
 				"						\"### 最新\",",
-				"						\"* \" + BlueBack.UpmVersionManager.Editor.Object_Setting.s_projectparam.git_url + \".git?path=\" + BlueBack.UpmVersionManager.Editor.Object_Setting.s_projectparam.git_path + \"#\" + a_argument.version,",
+				"						\"* \" + BlueBack.VersionManager.Editor.Object_Setting.s_projectparam.git_url + \".git?path=\" + BlueBack.VersionManager.Editor.Object_Setting.s_projectparam.git_path + \"#\" + a_argument.version,",
 				"						\"### 開発\",",
-				"						\"* \" + BlueBack.UpmVersionManager.Editor.Object_Setting.s_projectparam.git_url + \".git?path=\" + BlueBack.UpmVersionManager.Editor.Object_Setting.s_projectparam.git_path,",
+				"						\"* \" + BlueBack.VersionManager.Editor.Object_Setting.s_projectparam.git_url + \".git?path=\" + BlueBack.VersionManager.Editor.Object_Setting.s_projectparam.git_path,",
 				"					};",
 				"				},",
 				"",
 				"				//インストール。 ",
-				"				(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
+				"				(in BlueBack.VersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
 				"					return new string[]{",
 				"						\"## Unityへの追加方法\",",
 				"						\"* Unity起動\",",
@@ -108,9 +108,9 @@ namespace Samples.UpmVersionManager.NewProject.Editor
 				"				},",
 				"",
 				"				//例。",
-				"				(in BlueBack.UpmVersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
+				"				(in BlueBack.VersionManager.Editor.Object_Setting.Creator_Argument a_argument) => {",
 				"					System.Collections.Generic.List<string> t_list = new System.Collections.Generic.List<string>();",
-				"					t_list.AddRange(BlueBack.UpmVersionManager.Editor.Object_Setting.Create_RootReadMd_Exsample(a_argument));",
+				"					t_list.AddRange(BlueBack.VersionManager.Editor.Object_Setting.Create_RootReadMd_Exsample(a_argument));",
 				"					return t_list.ToArray();",
 				"				},",
 				"			};",
@@ -122,7 +122,7 @@ namespace Samples.UpmVersionManager.NewProject.Editor
 			};
 
 			//projectparam
-			BlueBack.UpmVersionManager.Editor.ProjectParam t_projectparam = BlueBack.UpmVersionManager.Editor.ProjectParam.Load();
+			BlueBack.VersionManager.Editor.ProjectParam t_projectparam = BlueBack.VersionManager.Editor.ProjectParam.Load();
 
 			//replace_list
 			System.Collections.Generic.Dictionary<string,string> t_replace_list = new System.Collections.Generic.Dictionary<string,string>();
@@ -143,11 +143,11 @@ namespace Samples.UpmVersionManager.NewProject.Editor
 
 			{
 				//path
-				string t_path = "Editor/UpmVersionManagerSetting.cs";
+				string t_path = "Editor/VersionManagerSetting.cs";
 
-				BlueBack.AssetLib.Editor.CreateDirectory.CreateDirectoryToAssetsPath(System.IO.Path.GetDirectoryName(t_path));
-				BlueBack.AssetLib.Editor.SaveText.SaveUtf8TextToAssetsPath(t_stringbuilder.ToString(),"Editor/UpmVersionManagerSetting.cs",false,BlueBack.AssetLib.LineFeedOption.CRLF);
-				BlueBack.AssetLib.Editor.RefreshAsset.Refresh();
+				BlueBack.AssetLib.Editor.CreateDirectoryWithAssetsPath.Create(System.IO.Path.GetDirectoryName(t_path));
+				BlueBack.AssetLib.Editor.SaveTextWithAssetsPath.SaveNoBomUtf8(t_stringbuilder.ToString(),"Editor/VersionManagerSetting.cs",BlueBack.AssetLib.LineFeedOption.CRLF);
+				BlueBack.AssetLib.Editor.RefreshAssetDatabase.Refresh();
 			}
 		}
 	}

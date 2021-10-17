@@ -20,21 +20,25 @@ namespace BlueBack.Audio.Editor
 		*/
 		public const string packageversion = Version.packageversion;
 
-		/** MenuItem_BlueBack_Audio_UpdatePackage
+		/** MenuItem_UpdatePackage_Develop
 		*/
 		#if(!DEF_USER_BLUEBACK_AUDIO)
-		[UnityEditor.MenuItem("BlueBack/Audio/UpdatePackage " + Version.packageversion)]
+		[UnityEditor.MenuItem("BlueBack/Audio/UpdatePackage/Develop")]
 		#endif
-		public static void MenuItem_BlueBack_Audio_UpdatePackage()
+		public static void MenuItem_UpdatePackage_Develop()
+		{
+			UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM");
+		}
+
+		/** MenuItem_UpdatePackage_Last
+		*/
+		#if(!DEF_USER_BLUEBACK_AUDIO)
+		[UnityEditor.MenuItem("BlueBack/Audio/UpdatePackage/Last " + Version.packageversion)]
+		#endif
+		public static void MenuItem_UpdatePackage_Last()
 		{
 			string t_version = GetLastReleaseNameFromGitHub();
-			if(t_version == null){
-				#if(UNITY_EDITOR)
-				DebugTool.EditorLogError("GetLastReleaseNameFromGitHub : connect error");
-				#endif
-			}else if(t_version.Length <= 0){
-				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM");
-			}else{
+			if(t_version != null){
 				UnityEditor.PackageManager.Client.Add("https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM#" + t_version);
 			}
 		}
