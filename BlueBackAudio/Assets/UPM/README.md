@@ -18,7 +18,7 @@ Unity 2021.2.0b9
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM#0.0.10
+* https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM#0.0.11
 ### 開発
 * https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM
 
