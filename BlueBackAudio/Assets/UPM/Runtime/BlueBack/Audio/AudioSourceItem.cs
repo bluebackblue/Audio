@@ -1,9 +1,9 @@
 
 
 /**
- * Copyright (c) blueback
- * Released under the MIT License
- * @brief オーディオ。
+	Copyright (c) blueback
+	Released under the MIT License
+	@brief オーディオ。
 */
 
 
