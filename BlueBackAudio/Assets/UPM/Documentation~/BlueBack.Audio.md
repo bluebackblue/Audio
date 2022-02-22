@@ -12,6 +12,7 @@ MIT License
 ### エディター
 * https://github.com/bluebackblue/UpmAudio
 ### サンプル
+* https://maou.audio/rule/
 * https://github.com/bluebackblue/UpmAudio
 
 ## 動作確認
@@ -19,7 +20,7 @@ Unity 2022.1.0b2
 
 ## UPM
 ### 最新
-* https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM#0.0.11
+* https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM#0.0.12
 ### 開発
 * https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM
 

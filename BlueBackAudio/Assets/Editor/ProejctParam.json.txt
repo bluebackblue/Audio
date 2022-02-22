@@ -27,7 +27,7 @@
         ],
         "reference_list":[
             {
-                "use":"use",
+                "mode":"package",
                 "package_fullname":"BlueBack.UnityPlayerLoop",
                 "url":"https://github.com/bluebackblue/UpmUnityPlayerLoop"
             }
@@ -38,7 +38,7 @@
         ],
         "reference_list":[
             {
-                "use":"use",
+                "mode":"package",
                 "package_fullname":"BlueBack.Audio",
                 "url":"https://github.com/bluebackblue/UpmAudio"
             }
@@ -48,8 +48,13 @@
         "define_list":[
         ],
         "reference_list":[
+			{
+                "mode":"url",
+                "package_fullname":null,
+                "url":"https://maou.audio/rule/"			
+			},
             {
-                "use":"use",
+                "mode":"package",
                 "package_fullname":"BlueBack.Audio",
                 "url":"https://github.com/bluebackblue/UpmAudio"
             }
