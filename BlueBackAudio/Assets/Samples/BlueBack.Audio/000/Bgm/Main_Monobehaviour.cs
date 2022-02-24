@@ -4,9 +4,9 @@
 */
 namespace BlueBack.Audio.Samples.Bgm
 {
-	/** TestScene_Monobehaviour
+	/** Main_Monobehaviour
 	*/
-	public sealed class TestScene_Monobehaviour : UnityEngine.MonoBehaviour
+	public sealed class Main_Monobehaviour : UnityEngine.MonoBehaviour
 	{
 		/** instance
 		*/
@@ -16,6 +16,9 @@ namespace BlueBack.Audio.Samples.Bgm
 		*/
 		public void Awake()
 		{
+			//listener
+			this.gameObject.AddComponent<UnityEngine.AudioListener>();
+
 			//audiomixer
 			UnityEngine.Audio.AudioMixer t_audiomixer = UnityEngine.Resources.Load<UnityEngine.GameObject>("Bgm/AudioMixer").GetComponent<BlueBack.Audio.AudioMixer_MonoBehaviour>().audiomixer;
 			UnityEngine.Audio.AudioMixerGroup[] t_audiomixergroup_list = t_audiomixer.FindMatchingGroups("Master/Bgm");
