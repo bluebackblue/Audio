@@ -16,7 +16,7 @@ MIT License
 * https://github.com/bluebackblue/UpmAudio
 
 ## 動作確認
-Unity 2022.1.0b8
+Unity 2022.1.0b12
 
 ## UPM
 ### 最新
