@@ -17,7 +17,7 @@ namespace BlueBack.Audio
 	{
 		/** [BlueBack.Audio.Player_Base]更新。
 		*/
-		void OnUnityFixedUpdate();
+		void UnityFixedUpdate();
 
 		/** [BlueBack.Audio.Player_Base]ボリューム。更新。
 		*/

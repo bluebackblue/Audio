@@ -209,7 +209,7 @@ namespace BlueBack.Audio
 
 		/** [BlueBack.Audio.Player_Base]更新。
 		*/
-		public void OnUnityFixedUpdate()
+		public void UnityFixedUpdate()
 		{
 			if(this.request_bank != this.playerparam.bank){
 				//アンロードリクエスト。

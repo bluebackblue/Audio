@@ -26,7 +26,10 @@ namespace BlueBack.Audio.Samples.Bgm
 			UnityEngine.Audio.AudioMixerGroup t_audiomixergroup = t_audiomixergroup_list[0];
 
 			//instance
-			this.instance = new BlueBack.Audio.Audio();
+			BlueBack.Audio.InitParam t_initparam = BlueBack.Audio.InitParam.CreateDefault();
+			{
+			}
+			this.instance = new BlueBack.Audio.Audio(in t_initparam);
 			BlueBack.Audio.Player_Bgm t_player = this.instance.CreateBgm("bgm_common",t_audiomixergroup);
 			t_player.LoadRequest(UnityEngine.Resources.Load<UnityEngine.GameObject>("Bgm/BgmCommon").GetComponent<BlueBack.Audio.Bank_MonoBehaviour>().bank);
 			this.instance.SetMasterVolume(1.0f);
