@@ -21,7 +21,7 @@ namespace BlueBack.Audio.Samples.Bgm
 			this.gameObject.AddComponent<UnityEngine.AudioListener>();
 
 			//audiomixer
-			UnityEngine.Audio.AudioMixer t_audiomixer = UnityEngine.Resources.Load<UnityEngine.GameObject>("Bgm/AudioMixer").GetComponent<BlueBack.Audio.AudioMixer_MonoBehaviour>().audiomixer;
+			UnityEngine.Audio.AudioMixer t_audiomixer = UnityEngine.Resources.Load<UnityEngine.GameObject>("BlueBack.Bgm.Samples/AudioMixer").GetComponent<BlueBack.Audio.AudioMixer_MonoBehaviour>().audiomixer;
 			UnityEngine.Audio.AudioMixerGroup[] t_audiomixergroup_list = t_audiomixer.FindMatchingGroups("Master/Bgm");
 			UnityEngine.Audio.AudioMixerGroup t_audiomixergroup = t_audiomixergroup_list[0];
 
@@ -31,7 +31,7 @@ namespace BlueBack.Audio.Samples.Bgm
 			}
 			this.instance = new BlueBack.Audio.Audio(in t_initparam);
 			BlueBack.Audio.Player_Bgm t_player = this.instance.CreateBgm("bgm_common",t_audiomixergroup);
-			t_player.LoadRequest(UnityEngine.Resources.Load<UnityEngine.GameObject>("Bgm/BgmCommon").GetComponent<BlueBack.Audio.Bank_MonoBehaviour>().bank);
+			t_player.LoadRequest(UnityEngine.Resources.Load<UnityEngine.GameObject>("BlueBack.Bgm.Samples/BgmCommon").GetComponent<BlueBack.Audio.Bank_MonoBehaviour>().bank);
 			this.instance.SetMasterVolume(1.0f);
 			t_player.SetVolume(1.0f);
 			t_player.SetCrossFadeFrame(10);
