@@ -7,6 +7,13 @@
 */
 
 
+/** define
+*/
+#if((ASMDEF_BLUEBACK_UNITYPLAYERLOOP)||(USERDEF_BLUEBACK_UNITYPLAYERLOOP))
+#define ASMDEF_TRUE
+#endif
+
+
 /** BlueBack.Audio
 */
 namespace BlueBack.Audio
@@ -26,6 +33,7 @@ namespace BlueBack.Audio
 		/** constructor
 		*/
 		public Audio()
+		#if(ASMDEF_TRUE)
 		{
 			//PlayerLoopSystem
 			UnityEngine.LowLevel.PlayerLoopSystem t_playerloopsystem = BlueBack.UnityPlayerLoop.UnityPlayerLoop.GetCurrentPlayerLoop();
@@ -36,16 +44,27 @@ namespace BlueBack.Audio
 			//player
 			this.player = new System.Collections.Generic.Dictionary<string,Player_Base>();
 		}
+		#else
+		{
+			#warning "ASMDEF_TRUE"
+		}
+		#endif
 
 		/** [System.IDisposable]削除。
 		*/
 		public void Dispose()
+		#if(ASMDEF_TRUE)
 		{
 			//PlayerLoopSystem
 			UnityEngine.LowLevel.PlayerLoopSystem t_playerloopsystem = BlueBack.UnityPlayerLoop.UnityPlayerLoop.GetCurrentPlayerLoop();
 			BlueBack.UnityPlayerLoop.Remove.RemoveFromType(ref t_playerloopsystem,typeof(PlayerLoopType.Main));
 			BlueBack.UnityPlayerLoop.UnityPlayerLoop.SetPlayerLoop(t_playerloopsystem);
 		}
+		#else
+		{
+			#warning "ASMDEF_TRUE"
+		}
+		#endif
 
 		/** GetMasterVolume
 		*/

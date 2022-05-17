@@ -2,6 +2,7 @@
 
 /** BlueBack.Audio.Samples.Bgm
 */
+#if(!DEF_BLUEBACK_AUDIO_SAMPLES_DISABLE)
 namespace BlueBack.Audio.Samples.Bgm
 {
 	/** Main_Monobehaviour
@@ -59,4 +60,5 @@ namespace BlueBack.Audio.Samples.Bgm
 		}
 	}
 }
+#endif
 
