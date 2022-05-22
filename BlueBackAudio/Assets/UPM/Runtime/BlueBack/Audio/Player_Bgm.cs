@@ -182,7 +182,7 @@ namespace BlueBack.Audio
 
 			return false;
 		}
-		
+
 		/** ボリューム。設定。
 		*/
 		public void SetVolume(float a_volume)
