@@ -15,11 +15,19 @@ namespace BlueBack.Audio
 	*/
 	public enum Player_Bgm_Mode
 	{
+		/** None
+		*/
 		None = -1,
+
+		/** 再生。
+		*/
 		Play0,
 		Play1,
-		Cross0To1,
-		Cross1To0,
+
+		/** クロスフェード。
+		*/
+		CrossFade0To1,
+		CrossFade1To0,
 	}
 }
 

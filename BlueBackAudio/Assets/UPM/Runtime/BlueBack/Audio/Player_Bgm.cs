@@ -98,21 +98,21 @@ namespace BlueBack.Audio
 		public bool LoadRequest(Bank a_bank)
 		{
 			if(this.playerparam.bank != null){
-				#if(DEF_BLUEBACK_AUDIO_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,"Player_Bgm:LoadRequest:playerparam.bank != null");
 				#endif
 				return false;
 			}
 
 			if(this.request_bank != null){
-				#if(DEF_BLUEBACK_AUDIO_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,"Player_Bgm:LoadRequest:request_bank != null");
 				#endif
 				return false;
 			}
 
 			this.request_bank = a_bank;
-			#if(DEF_BLUEBACK_AUDIO_LOG)
+			#if(DEF_BLUEBACK_LOG)
 			DebugTool.Log("Player_Bgm:LoadRequest:request_bank = " + this.request_bank.bankname);
 			#endif
 
@@ -124,21 +124,21 @@ namespace BlueBack.Audio
 		public bool UnLoadRequest()
 		{
 			if(this.request_bank == null){
-				#if(DEF_BLUEBACK_AUDIO_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,"Player_Bgm:UnLoadRequest:request_bank == null");
 				#endif
 				return false;
 			}
 
 			if(this.playerparam.bank == null){
-				#if(DEF_BLUEBACK_AUDIO_ASSERT)
+				#if(DEF_BLUEBACK_ASSERT)
 				DebugTool.Assert(false,"Player_Bgm:UnLoadRequest:playerparam.bank == null");
 				#endif
 				return false;
 			}
 
 			this.request_bank = null;
-			#if(DEF_BLUEBACK_AUDIO_LOG)
+			#if(DEF_BLUEBACK_LOG)
 			DebugTool.Log("Player_Bgm:UnLoadRequest:request_bank = null");
 			#endif
 
@@ -172,8 +172,8 @@ namespace BlueBack.Audio
 		{
 			#pragma warning disable 0162
 			switch(this.mode){
-			case Player_Bgm_Mode.Cross0To1:
-			case Player_Bgm_Mode.Cross1To0:
+			case Player_Bgm_Mode.CrossFade0To1:
+			case Player_Bgm_Mode.CrossFade1To0:
 				{
 					return true;
 				}break;
@@ -220,7 +220,7 @@ namespace BlueBack.Audio
 					//再生停止リクエスト。
 
 					this.request_dataindex = -1;
-					#if(DEF_BLUEBACK_AUDIO_LOG)
+					#if(DEF_BLUEBACK_LOG)
 					DebugTool.Log("request_dataindex = -1");
 					#endif
 				}
@@ -244,7 +244,7 @@ namespace BlueBack.Audio
 						t_current.ApplyVolume();
 						t_current.PlayDirect();
 
-						#if(DEF_BLUEBACK_AUDIO_LOG)
+						#if(DEF_BLUEBACK_LOG)
 						DebugTool.Log("PlayDirect : " + this.request_dataindex.ToString());
 						#endif
 					}
@@ -269,9 +269,9 @@ namespace BlueBack.Audio
 
 						//mode
 						if(this.mode == Player_Bgm_Mode.Play0){
-							this.mode = Player_Bgm_Mode.Cross0To1;
+							this.mode = Player_Bgm_Mode.CrossFade0To1;
 						}else{
-							this.mode = Player_Bgm_Mode.Cross1To0;
+							this.mode = Player_Bgm_Mode.CrossFade1To0;
 						}
 
 						if(this.request_dataindex >= 0){
@@ -280,7 +280,7 @@ namespace BlueBack.Audio
 							t_next.ApplyVolume();
 							t_next.PlayDirect();
 
-							#if(DEF_BLUEBACK_AUDIO_LOG)
+							#if(DEF_BLUEBACK_LOG)
 							DebugTool.Log("PlayDirect : " + this.request_dataindex.ToString());
 							#endif
 						}else{
@@ -293,12 +293,12 @@ namespace BlueBack.Audio
 						//再生中。
 					}
 				}break;
-			case Player_Bgm_Mode.Cross0To1:
-			case Player_Bgm_Mode.Cross1To0:
+			case Player_Bgm_Mode.CrossFade0To1:
+			case Player_Bgm_Mode.CrossFade1To0:
 				{
 					AudioSourceItem t_current;
 					AudioSourceItem t_next;
-					if(this.mode == Player_Bgm_Mode.Cross0To1){
+					if(this.mode == Player_Bgm_Mode.CrossFade0To1){
 						t_current = this.audiosourceitem_list[0];
 						t_next = this.audiosourceitem_list[1];
 					}else{
@@ -341,7 +341,7 @@ namespace BlueBack.Audio
 
 						if(this.dataindex < 0){
 							this.mode = Player_Bgm_Mode.None;
-						}else if(this.mode == Player_Bgm_Mode.Cross0To1){
+						}else if(this.mode == Player_Bgm_Mode.CrossFade0To1){
 							this.mode = Player_Bgm_Mode.Play1;
 						}else{
 							this.mode = Player_Bgm_Mode.Play0;
