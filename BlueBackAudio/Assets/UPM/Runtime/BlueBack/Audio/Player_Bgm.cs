@@ -98,21 +98,21 @@ namespace BlueBack.Audio
 		public bool LoadRequest(Bank a_bank)
 		{
 			if(this.playerparam.bank != null){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,"Player_Bgm:LoadRequest:playerparam.bank != null");
 				#endif
 				return false;
 			}
 
 			if(this.request_bank != null){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,"Player_Bgm:LoadRequest:request_bank != null");
 				#endif
 				return false;
 			}
 
 			this.request_bank = a_bank;
-			#if(DEF_BLUEBACK_LOG)
+			#if(DEF_BLUEBACK_DEBUG_LOG)
 			DebugTool.Log("Player_Bgm:LoadRequest:request_bank = " + this.request_bank.bankname);
 			#endif
 
@@ -124,21 +124,21 @@ namespace BlueBack.Audio
 		public bool UnLoadRequest()
 		{
 			if(this.request_bank == null){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,"Player_Bgm:UnLoadRequest:request_bank == null");
 				#endif
 				return false;
 			}
 
 			if(this.playerparam.bank == null){
-				#if(DEF_BLUEBACK_ASSERT)
+				#if(DEF_BLUEBACK_DEBUG_ASSERT)
 				DebugTool.Assert(false,"Player_Bgm:UnLoadRequest:playerparam.bank == null");
 				#endif
 				return false;
 			}
 
 			this.request_bank = null;
-			#if(DEF_BLUEBACK_LOG)
+			#if(DEF_BLUEBACK_DEBUG_LOG)
 			DebugTool.Log("Player_Bgm:UnLoadRequest:request_bank = null");
 			#endif
 
@@ -220,7 +220,7 @@ namespace BlueBack.Audio
 					//再生停止リクエスト。
 
 					this.request_dataindex = -1;
-					#if(DEF_BLUEBACK_LOG)
+					#if(DEF_BLUEBACK_DEBUG_LOG)
 					DebugTool.Log("request_dataindex = -1");
 					#endif
 				}
@@ -244,7 +244,7 @@ namespace BlueBack.Audio
 						t_current.ApplyVolume();
 						t_current.PlayDirect();
 
-						#if(DEF_BLUEBACK_LOG)
+						#if(DEF_BLUEBACK_DEBUG_LOG)
 						DebugTool.Log("PlayDirect : " + this.request_dataindex.ToString());
 						#endif
 					}
@@ -280,7 +280,7 @@ namespace BlueBack.Audio
 							t_next.ApplyVolume();
 							t_next.PlayDirect();
 
-							#if(DEF_BLUEBACK_LOG)
+							#if(DEF_BLUEBACK_DEBUG_LOG)
 							DebugTool.Log("PlayDirect : " + this.request_dataindex.ToString());
 							#endif
 						}else{
