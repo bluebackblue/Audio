@@ -51,7 +51,6 @@ namespace BlueBack.Audio
 		}
 		#else
 		{
-			#warning "ASMDEF_TRUE"
 		}
 		#endif
 
@@ -67,7 +66,6 @@ namespace BlueBack.Audio
 		}
 		#else
 		{
-			#warning "ASMDEF_TRUE"
 		}
 		#endif
 
