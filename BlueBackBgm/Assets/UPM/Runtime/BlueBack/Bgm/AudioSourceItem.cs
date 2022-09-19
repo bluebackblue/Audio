@@ -3,13 +3,13 @@
 /**
 	Copyright (c) blueback
 	Released under the MIT License
-	@brief オーディオ。
+	@brief ＢＧＭ。
 */
 
 
-/** BlueBack.Audio
+/** BlueBack.Bgm
 */
-namespace BlueBack.Audio
+namespace BlueBack.Bgm
 {
 	/** AudioSourceItem
 	*/
@@ -67,7 +67,7 @@ namespace BlueBack.Audio
 		*/
 		public void ApplyVolume()
 		{
-			float t_volume_new = this.playerparam.audio.GetMasterVolume() * this.playerparam.volume * this.volume * this.datavolume;
+			float t_volume_new = this.playerparam.bgm.GetMasterVolume() * this.playerparam.volume * this.volume * this.datavolume;
 			if(t_volume_new != this.raw.volume){
 				this.raw.volume = t_volume_new;
 			}

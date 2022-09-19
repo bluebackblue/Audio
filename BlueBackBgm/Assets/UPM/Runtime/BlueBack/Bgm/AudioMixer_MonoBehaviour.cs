@@ -3,13 +3,13 @@
 /**
 	Copyright (c) blueback
 	Released under the MIT License
-	@brief オーディオ。オーディオミキサー。
+	@brief ＢＧＭ。オーディオミキサー。
 */
 
 
-/** BlueBack.Audio
+/** BlueBack.Bgm
 */
-namespace BlueBack.Audio
+namespace BlueBack.Bgm
 {
 	/** AudioMixer_MonoBehaviour
 	*/

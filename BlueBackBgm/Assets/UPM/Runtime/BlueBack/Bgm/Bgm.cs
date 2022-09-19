@@ -3,7 +3,7 @@
 /**
 	Copyright (c) blueback
 	Released under the MIT License
-	@brief オーディオ。
+	@brief ＢＧＭ。
 */
 
 
@@ -16,13 +16,13 @@
 #endif
 
 
-/** BlueBack.Audio
+/** BlueBack.Bgm
 */
-namespace BlueBack.Audio
+namespace BlueBack.Bgm
 {
-	/** Audio
+	/** Bgm
 	*/
-	public sealed class Audio : System.IDisposable
+	public sealed class Bgm : System.IDisposable
 	{
 		/** volume
 		*/
@@ -34,7 +34,7 @@ namespace BlueBack.Audio
 
 		/** constructor
 		*/
-		public Audio(in InitParam a_initparam)
+		public Bgm(in InitParam a_initparam)
 		#if(ASMDEF_TRUE)
 		{
 			//PlayerLoopSystem

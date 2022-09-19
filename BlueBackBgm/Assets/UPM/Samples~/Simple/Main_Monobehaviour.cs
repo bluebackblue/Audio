@@ -1,9 +1,9 @@
 
 
-/** BlueBack.Audio.Samples.Bgm
+/** BlueBack.Bgm.Samples.Simple
 */
 #if(!DEF_BLUEBACK_AUDIO_SAMPLES_DISABLE)
-namespace BlueBack.Audio.Samples.Bgm
+namespace BlueBack.Bgm.Samples.Simple
 {
 	/** Main_Monobehaviour
 	*/
@@ -11,7 +11,7 @@ namespace BlueBack.Audio.Samples.Bgm
 	{
 		/** instance
 		*/
-		private BlueBack.Audio.Audio instance;
+		private BlueBack.Bgm.Bgm instance;
 
 		/** Awake
 		*/
@@ -21,17 +21,17 @@ namespace BlueBack.Audio.Samples.Bgm
 			this.gameObject.AddComponent<UnityEngine.AudioListener>();
 
 			//audiomixer
-			UnityEngine.Audio.AudioMixer t_audiomixer = UnityEngine.Resources.Load<UnityEngine.GameObject>("BlueBack.Bgm.Samples/AudioMixer").GetComponent<BlueBack.Audio.AudioMixer_MonoBehaviour>().audiomixer;
+			UnityEngine.Audio.AudioMixer t_audiomixer = UnityEngine.Resources.Load<UnityEngine.GameObject>("BlueBack.Bgm.Samples.Simple/AudioMixer").GetComponent<BlueBack.Bgm.AudioMixer_MonoBehaviour>().audiomixer;
 			UnityEngine.Audio.AudioMixerGroup[] t_audiomixergroup_list = t_audiomixer.FindMatchingGroups("Master/Bgm");
 			UnityEngine.Audio.AudioMixerGroup t_audiomixergroup = t_audiomixergroup_list[0];
 
 			//instance
-			BlueBack.Audio.InitParam t_initparam = BlueBack.Audio.InitParam.CreateDefault();
+			BlueBack.Bgm.InitParam t_initparam = BlueBack.Bgm.InitParam.CreateDefault();
 			{
 			}
-			this.instance = new BlueBack.Audio.Audio(in t_initparam);
-			BlueBack.Audio.Player_Bgm t_player = this.instance.CreateBgm("bgm_common",t_audiomixergroup);
-			t_player.LoadRequest(UnityEngine.Resources.Load<UnityEngine.GameObject>("BlueBack.Bgm.Samples/BgmCommon").GetComponent<BlueBack.Audio.Bank_MonoBehaviour>().bank);
+			this.instance = new BlueBack.Bgm.Bgm(in t_initparam);
+			BlueBack.Bgm.Player_Bgm t_player = this.instance.CreateBgm("bgm_common",t_audiomixergroup);
+			t_player.LoadRequest(UnityEngine.Resources.Load<UnityEngine.GameObject>("BlueBack.Bgm.Samples.Simple/BgmCommon").GetComponent<BlueBack.Bgm.Bank_MonoBehaviour>().bank);
 			this.instance.SetMasterVolume(1.0f);
 			t_player.SetVolume(1.0f);
 			t_player.SetCrossFadeFrame(10);

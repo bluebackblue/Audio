@@ -7,9 +7,9 @@
 */
 
 
-/** BlueBack.Audio
+/** BlueBack.Bgm
 */
-namespace BlueBack.Audio
+namespace BlueBack.Bgm
 {
 	/** Version
 	*/
@@ -17,11 +17,11 @@ namespace BlueBack.Audio
 	{
 		/** packagename
 		*/
-		public const string packagename = "Audio";
+		public const string packagename = "Bgm";
 
 		/** packageversion
 		*/
-		public const string packageversion = "0.0.22";
+		public const string packageversion = "0.0.23";
 
 		/** GetPackageVersion
 		*/

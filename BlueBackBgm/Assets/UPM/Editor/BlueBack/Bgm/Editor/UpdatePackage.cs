@@ -7,10 +7,10 @@
 */
 
 
-/** BlueBack.Audio.Editor
+/** BlueBack.Bgm.Editor
 */
 #if(UNITY_EDITOR)
-namespace BlueBack.Audio.Editor
+namespace BlueBack.Bgm.Editor
 {
 	/** UpdatePackage
 	*/
@@ -22,12 +22,12 @@ namespace BlueBack.Audio.Editor
 
 		/** MenuItem_UpdatePackage_Develop
 		*/
-		#if(!USERDEF_BLUEBACK_AUDIO)
-		[UnityEditor.MenuItem("BlueBack/Audio/UpdatePackage/Develop")]
+		#if(!USERDEF_BLUEBACK_BGM)
+		[UnityEditor.MenuItem("BlueBack/Bgm/UpdatePackage/Develop")]
 		#endif
 		public static void MenuItem_UpdatePackage_Develop()
 		{
-			string t_name = "https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM";
+			string t_name = "https://github.com/bluebackblue/UpmBgm.git?path=BlueBackBgm/Assets/UPM";
 			UnityEditor.PackageManager.Requests.AddRequest t_request = UnityEditor.PackageManager.Client.Add(t_name);
 			while(t_request.Status == UnityEditor.PackageManager.StatusCode.InProgress){
 				if(UnityEditor.EditorUtility.DisplayCancelableProgressBar(t_name,t_name,1.0f) == true){
@@ -40,14 +40,14 @@ namespace BlueBack.Audio.Editor
 
 		/** MenuItem_UpdatePackage_Last
 		*/
-		#if(!USERDEF_BLUEBACK_AUDIO)
-		[UnityEditor.MenuItem("BlueBack/Audio/UpdatePackage/Last " + Version.packageversion)]
+		#if(!USERDEF_BLUEBACK_BGM)
+		[UnityEditor.MenuItem("BlueBack/Bgm/UpdatePackage/Last " + Version.packageversion)]
 		#endif
 		public static void MenuItem_UpdatePackage_Last()
 		{
 			string t_version = Inner_GetLastReleaseNameFromGitHub();
 			if(t_version != null){
-				string t_name = "https://github.com/bluebackblue/UpmAudio.git?path=BlueBackAudio/Assets/UPM#" + t_version;
+				string t_name = "https://github.com/bluebackblue/UpmBgm.git?path=BlueBackBgm/Assets/UPM#" + t_version;
 				UnityEditor.PackageManager.Requests.AddRequest t_request = UnityEditor.PackageManager.Client.Add(t_name);
 				while(t_request.Status == UnityEditor.PackageManager.StatusCode.InProgress){
 					if(UnityEditor.EditorUtility.DisplayCancelableProgressBar(t_name,t_name,1.0f) == true){
@@ -96,7 +96,7 @@ namespace BlueBack.Audio.Editor
 		*/
 		private static string Inner_GetLastReleaseNameFromGitHub()
 		{
-			string t_url = "https://api.github.com/repos/bluebackblue/UpmAudio/releases/latest";
+			string t_url = "https://api.github.com/repos/bluebackblue/UpmBgm/releases/latest";
 
 			try{
 				byte[] t_binary = Inner_DownloadBinary(t_url);

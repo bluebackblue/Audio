@@ -16,9 +16,9 @@
 #endif
 
 
-/** BlueBack.Audio
+/** BlueBack.Bgm
 */
-namespace BlueBack.Audio
+namespace BlueBack.Bgm
 {
 	/** DebugTool
 	*/

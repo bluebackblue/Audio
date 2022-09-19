@@ -3,13 +3,13 @@
 /**
 	Copyright (c) blueback
 	Released under the MIT License
-	@brief オーディオ。
+	@brief ＢＧＭ。
 */
 
 
-/** BlueBack.Audio
+/** BlueBack.Bgm
 */
-namespace BlueBack.Audio
+namespace BlueBack.Bgm
 {
 	/** Player_Base
 	*/

@@ -3,13 +3,13 @@
 /**
 	Copyright (c) blueback
 	Released under the MIT License
-	@brief オーディオ。ＢＧＭ。
+	@brief ＢＧＭ。ＢＧＭ。
 */
 
 
-/** BlueBack.Audio
+/** BlueBack.Bgm
 */
-namespace BlueBack.Audio
+namespace BlueBack.Bgm
 {
 	/** Player_Bgm
 	*/
@@ -46,7 +46,7 @@ namespace BlueBack.Audio
 
 		/** constructor
 		*/
-		public Player_Bgm(Audio a_audio,UnityEngine.Audio.AudioMixerGroup a_audiomixergroup)
+		public Player_Bgm(Bgm a_bgm,UnityEngine.Audio.AudioMixerGroup a_audiomixergroup)
 		{
 			//mode
 			this.mode = Player_Bgm_Mode.None;
@@ -54,7 +54,7 @@ namespace BlueBack.Audio
 			//playerparam
 			UnityEngine.GameObject t_root_gameobject = new UnityEngine.GameObject("Player_Bgm");
 			UnityEngine.GameObject.DontDestroyOnLoad(t_root_gameobject);
-			this.playerparam = new PlayerParam(a_audio,t_root_gameobject);
+			this.playerparam = new PlayerParam(a_bgm,t_root_gameobject);
 
 			//audiosourceitem_list
 			this.audiosourceitem_list = new AudioSourceItem[2];

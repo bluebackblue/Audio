@@ -3,21 +3,21 @@
 /**
 	Copyright (c) blueback
 	Released under the MIT License
-	@brief オーディオ。プレイヤーパラメータ。
+	@brief ＢＧＭ。プレイヤーパラメータ。
 */
 
 
-/** BlueBack.Audio
+/** BlueBack.Bgm
 */
-namespace BlueBack.Audio
+namespace BlueBack.Bgm
 {
 	/** PlayerParam
 	*/
 	public sealed class PlayerParam
 	{
-		/** audio
+		/** [cache]bgm
 		*/
-		public Audio audio;
+		public Bgm bgm;
 
 		/** volume
 		*/
@@ -33,10 +33,10 @@ namespace BlueBack.Audio
 
 		/** constructor
 		*/
-		public PlayerParam(Audio a_audio,UnityEngine.GameObject a_root_gameobject)
+		public PlayerParam(Bgm a_bgm,UnityEngine.GameObject a_root_gameobject)
 		{
-			//audio
-			this.audio = a_audio;
+			//[cache]bgm
+			this.bgm = a_bgm;
 
 			//volume
 			this.volume = 0.0f;
