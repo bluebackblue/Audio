@@ -9,9 +9,13 @@ namespace BlueBack.Bgm.Samples.Simple
 	*/
 	public sealed class Main_Monobehaviour : UnityEngine.MonoBehaviour
 	{
-		/** instance
+		/** bgm
 		*/
-		private BlueBack.Bgm.Bgm instance;
+		private BlueBack.Bgm.Bgm bgm;
+
+		/** player
+		*/
+		private BlueBack.Bgm.Player player;
 
 		/** Awake
 		*/
@@ -25,16 +29,23 @@ namespace BlueBack.Bgm.Samples.Simple
 			UnityEngine.Audio.AudioMixerGroup[] t_audiomixergroup_list = t_audiomixer.FindMatchingGroups("Master/Bgm");
 			UnityEngine.Audio.AudioMixerGroup t_audiomixergroup = t_audiomixergroup_list[0];
 
-			//instance
-			BlueBack.Bgm.InitParam t_initparam = BlueBack.Bgm.InitParam.CreateDefault();
+			//bgm
 			{
+				//initparam
+				BlueBack.Bgm.InitParam t_initparam = BlueBack.Bgm.InitParam.CreateDefault();
+				{
+					t_initparam.volume = 1.0f;
+					t_initparam.player_default_crossfadeframe_max = 100;
+					t_initparam.player_default_volume = 1.0f;
+				}
+
+				//bgm
+				this.bgm = new BlueBack.Bgm.Bgm(in t_initparam);
+
+				//player
+				this.player = new BlueBack.Bgm.Player(this.bgm,t_audiomixergroup,"player");
+				this.player.LoadRequest(UnityEngine.Resources.Load<UnityEngine.GameObject>("BlueBack.Bgm.Samples.Simple/BgmCommon").GetComponent<BlueBack.Bgm.Bank_MonoBehaviour>().bank);
 			}
-			this.instance = new BlueBack.Bgm.Bgm(in t_initparam);
-			BlueBack.Bgm.Player_Bgm t_player = this.instance.CreateBgm("bgm_common",t_audiomixergroup);
-			t_player.LoadRequest(UnityEngine.Resources.Load<UnityEngine.GameObject>("BlueBack.Bgm.Samples.Simple/BgmCommon").GetComponent<BlueBack.Bgm.Bank_MonoBehaviour>().bank);
-			this.instance.SetMasterVolume(1.0f);
-			t_player.SetVolume(1.0f);
-			t_player.SetCrossFadeFrame(10);
 
 			//Main
 			StartCoroutine(this.CoroutineMain());
@@ -45,9 +56,9 @@ namespace BlueBack.Bgm.Samples.Simple
 		public System.Collections.IEnumerator CoroutineMain()
 		{
 			do{
-				this.instance.GetBgmPlayer("bgm_common").PlayRequest(0);
+				this.player.PlayRequest(0);
 				yield return new UnityEngine.WaitForSeconds(4);
-				this.instance.GetBgmPlayer("bgm_common").PlayRequest(1);
+				this.player.PlayRequest(1);
 				yield return new UnityEngine.WaitForSeconds(4);
 			}while(true);
 		}
@@ -56,9 +67,16 @@ namespace BlueBack.Bgm.Samples.Simple
 		*/
 		public void OnDestroy()
 		{
-			if(this.instance != null){
-				this.instance.Dispose();
-				this.instance = null;
+			//player
+			if(this.player != null){
+				this.player.Dispose();
+				this.player = null;
+			}
+
+			//bgm
+			if(this.bgm != null){
+				this.bgm.Dispose();
+				this.bgm = null;
 			}
 		}
 	}

@@ -3,7 +3,7 @@
 /**
 	Copyright (c) blueback
 	Released under the MIT License
-	@brief ＢＧＭ。ＢＧＭ。
+	@brief ＢＧＭ。プレイヤー。モード。
 */
 
 
@@ -11,9 +11,9 @@
 */
 namespace BlueBack.Bgm
 {
-	/** Player_Bgm
+	/** Player_Mode
 	*/
-	public enum Player_Bgm_Mode
+	public enum Player_Mode
 	{
 		/** None
 		*/

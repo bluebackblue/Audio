@@ -11,20 +11,20 @@
 */
 namespace BlueBack.Bgm
 {
-	/** Bank
+	/** Bank_Item
 	*/
 	#if(UNITY_EDITOR)
 	[System.Serializable]
 	#endif
-	public sealed class Bank
+	public struct Bank_Item
 	{
-		/** bankname
+		/** audioclip
 		*/
-		public string bankname;
+		public UnityEngine.AudioClip audioclip;
 
-		/** list
+		/** datavolume
 		*/
-		public Bank_Item[] list;
+		public float datavolume;
 	}
 }
 

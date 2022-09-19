@@ -21,7 +21,7 @@ namespace BlueBack.Bgm
 
 		/** playerparam
 		*/
-		public PlayerParam playerparam;
+		public Player_Param playerparam;
 
 		/** volume
 		*/
@@ -37,7 +37,7 @@ namespace BlueBack.Bgm
 
 		/** constructor
 		*/
-		public AudioSourceItem(UnityEngine.AudioSource a_audiosource,PlayerParam a_playerparam)
+		public AudioSourceItem(UnityEngine.AudioSource a_audiosource,Player_Param a_playerparam)
 		{
 			//raw
 			this.raw = a_audiosource;
@@ -67,7 +67,7 @@ namespace BlueBack.Bgm
 		*/
 		public void ApplyVolume()
 		{
-			float t_volume_new = this.playerparam.bgm.GetMasterVolume() * this.playerparam.volume * this.volume * this.datavolume;
+			float t_volume_new = this.playerparam.bgm.volume * this.playerparam.volume * this.volume * this.datavolume;
 			if(t_volume_new != this.raw.volume){
 				this.raw.volume = t_volume_new;
 			}

@@ -15,11 +15,26 @@ namespace BlueBack.Bgm
 	*/
 	public struct InitParam
 	{
+		/** volume
+		*/
+		public float volume;
+
+		/** player_default_crossfadeframe_max
+		*/
+		public int player_default_crossfadeframe_max;
+
+		/** player_default_volume
+		*/
+		public float player_default_volume;
+
 		/** CreateDefault
 		*/
 		public static InitParam CreateDefault()
 		{
 			return new InitParam(){
+				volume = 1.0f,
+				player_default_crossfadeframe_max = 10,
+				player_default_volume = 1.0f
 			};
 		}
 	}

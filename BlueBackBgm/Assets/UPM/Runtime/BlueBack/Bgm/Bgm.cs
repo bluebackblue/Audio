@@ -26,11 +26,16 @@ namespace BlueBack.Bgm
 	{
 		/** volume
 		*/
-		private float volume;
+		public float volume;
 
-		/** player
+		/** playerlist
 		*/
-		public System.Collections.Generic.Dictionary<string,Player_Base> player;
+		public System.Collections.Generic.List<Player> playerlist;
+
+		/** player_default
+		*/
+		public int player_default_crossfadeframe_max;
+		public float player_default_volume;
 
 		/** constructor
 		*/
@@ -39,15 +44,19 @@ namespace BlueBack.Bgm
 		{
 			//PlayerLoopSystem
 			UnityEngine.LowLevel.PlayerLoopSystem t_playerloopsystem = BlueBack.UnityPlayerLoop.UnityPlayerLoop.GetCurrentPlayerLoop();
-			BlueBack.UnityPlayerLoop.Add.AddFromType(ref t_playerloopsystem,UnityPlayerLoop.Mode.AddFirst,typeof(UnityEngine.PlayerLoop.FixedUpdate),typeof(PlayerLoopType.UnityFixedUpdate),this.UnityFixedUpdate);
+			BlueBack.UnityPlayerLoop.Add.AddFromType(ref t_playerloopsystem,UnityPlayerLoop.Mode.AddFirst,typeof(UnityEngine.PlayerLoop.FixedUpdate),typeof(PlayerLoopType.UnityFixedUpdate),this.Inner_UnityFixedUpdate);
 			BlueBack.UnityPlayerLoop.UnityPlayerLoop.SetPlayerLoop(t_playerloopsystem);
 			BlueBack.UnityPlayerLoop.UnityPlayerLoop.SetDefaultPlayerLoopOnUnityDestroy(null);
 
 			//volume
-			this.volume = 0.0f;
+			this.volume = a_initparam.volume;
 
-			//player
-			this.player = new System.Collections.Generic.Dictionary<string,Player_Base>();
+			//playerlist
+			this.playerlist = new System.Collections.Generic.List<Player>();
+
+			//player_default
+			this.player_default_crossfadeframe_max = a_initparam.player_default_crossfadeframe_max;
+			this.player_default_volume = a_initparam.player_default_volume;
 		}
 		#else
 		{
@@ -59,6 +68,14 @@ namespace BlueBack.Bgm
 		public void Dispose()
 		#if(ASMDEF_TRUE)
 		{
+			//playerlist
+			{
+				while(this.playerlist.Count > 0){
+					this.playerlist[0].Dispose();
+				}
+				this.playerlist = null;
+			}
+
 			//PlayerLoopSystem
 			UnityEngine.LowLevel.PlayerLoopSystem t_playerloopsystem = BlueBack.UnityPlayerLoop.UnityPlayerLoop.GetCurrentPlayerLoop();
 			BlueBack.UnityPlayerLoop.Remove.RemoveFromType(ref t_playerloopsystem,typeof(PlayerLoopType.UnityFixedUpdate));
@@ -69,35 +86,6 @@ namespace BlueBack.Bgm
 		}
 		#endif
 
-		/** GetMasterVolume
-		*/
-		public float GetMasterVolume()
-		{
-			return this.volume;
-		}
-
-		/** GetBgmPlayer
-		*/
-		public Player_Bgm GetBgmPlayer(string a_playername)
-		{
-			Player_Base t_player;
-			if(this.player.TryGetValue(a_playername,out t_player)){
-				return t_player as Player_Bgm;
-			}
-			return null;
-		}
-
-		/** GetPlayer
-		*/
-		public Player_Base GetPlayer(string a_playername)
-		{
-			Player_Base t_player;
-			if(this.player.TryGetValue(a_playername,out t_player)){
-				return t_player;
-			}
-			return null;
-		}
-
 		/** SetMasterVolume
 		*/
 		public void SetMasterVolume(float a_volume)
@@ -106,26 +94,24 @@ namespace BlueBack.Bgm
 			this.volume = a_volume;
 
 			//ApplyVolume
-			foreach(System.Collections.Generic.KeyValuePair<string,Player_Base> t_pair in this.player){
-				t_pair.Value.ApplyVolume();
+			{
+				int ii_max = this.playerlist.Count;
+				for(int ii=0;ii<ii_max;ii++){
+					this.playerlist[ii].ApplyVolume();
+				}
 			}
 		}
 
-		/** CreateBgm
+		/** Inner_UnityFixedUpdate
 		*/
-		public Player_Bgm CreateBgm(string a_playername,UnityEngine.Audio.AudioMixerGroup a_audiomixergroup)
+		private void Inner_UnityFixedUpdate()
 		{
-			Player_Bgm t_player = new Player_Bgm(this,a_audiomixergroup);
-			this.player.Add(a_playername,t_player);
-			return t_player;
-		}
-
-		/** UnityFixedUpdate
-		*/
-		private void UnityFixedUpdate()
-		{
-			foreach(System.Collections.Generic.KeyValuePair<string,Player_Base> t_pair in this.player){
-				t_pair.Value.UnityFixedUpdate();
+			//ApplyVolume
+			{
+				int ii_max = this.playerlist.Count;
+				for(int ii=0;ii<ii_max;ii++){
+					this.playerlist[ii].UnityFixedUpdate();
+				}
 			}
 		}
 	}
